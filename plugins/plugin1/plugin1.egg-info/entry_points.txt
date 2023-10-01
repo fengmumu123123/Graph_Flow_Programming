@@ -1,0 +1,2 @@
+[my_app_plugins]
+plugin1 = plugin1_impl:Plugin1
