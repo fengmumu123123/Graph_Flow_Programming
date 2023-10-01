@@ -1,8 +1,6 @@
-import sys
 from PySide6.QtGui import QAction
 from PySide6.QtWidgets import QApplication, QMainWindow, QDockWidget, QTextEdit, QToolBar, QVBoxLayout, QWidget, \
-    QMenuBar, QMenu, QStatusBar, QLabel
-from PySide6.QtCore import Qt
+    QMenuBar, QMenu, QStatusBar
 
 from core.plugin_manager import PluginManager
 from plugin_manager_dialog import PluginManagerDialog
@@ -77,8 +75,6 @@ class MainAppWindow(QMainWindow):
         self.plugin_manager = PluginManager(self)
         self.plugin_manager.load_plugins()
 
-
-
     def log_to_console(self, message: str):
         """向控制台输出栏添加日志信息。"""
         self.console_output.append(message)
@@ -89,6 +85,7 @@ class MainAppWindow(QMainWindow):
         """显示插件管理对话框"""
         self.plugin_manager_dialog = PluginManagerDialog(self.plugin_manager)
         self.plugin_manager_dialog.exec()
+
 
 def main():
     # 主函数，用于启动GUI应用

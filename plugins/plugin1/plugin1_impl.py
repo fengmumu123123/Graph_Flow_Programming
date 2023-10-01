@@ -32,7 +32,7 @@ class Plugin1:
 
         # 可以为这个子菜单添加菜单项，或者留给其他插件添加
         example_action = QAction("插件1测试", self.app)
-        example_action.triggered.connect(test_function)#点击测试
+        example_action.triggered.connect(test_function)  # 点击测试
         self.plugin_test_menu.addAction(example_action)
 
         # 从主应用获取文件菜单

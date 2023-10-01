@@ -18,11 +18,13 @@ class MainAppWindow(QMainWindow):
         self.plugin_manager = PluginManager(self)  # 初始化插件管理器
         self.plugin_manager.load_plugins()  # 加载所有插件
 
+
 def main():
     app = QApplication([])  # 创建应用实例
     main_window = MainAppWindow()  # 创建并初始化主窗口实例
     main_window.show()  # 显示主窗口
     app.exec()  # 开始GUI应用的事件循环
+
 
 if __name__ == "__main__":
     main()

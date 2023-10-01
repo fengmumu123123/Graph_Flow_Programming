@@ -1,7 +1,7 @@
 import json
 from importlib.metadata import metadata
 
-from importlib_metadata import entry_points, distribution
+from importlib_metadata import entry_points
 
 from core.mediator import PluginMediator
 

@@ -6,7 +6,7 @@ setup(
     name="plugin1",  # 插件名称
     version="0.1",  # 插件版本号
     packages=find_packages(),  # 自动发现并包括所有包
-    install_requires=[   # 依赖项
+    install_requires=[  # 依赖项
         'PySide6',
         'importlib_metadata',
         'setuptools',

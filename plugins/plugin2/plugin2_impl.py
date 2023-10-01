@@ -1,6 +1,7 @@
+import os
+
 from PySide6.QtGui import QAction
 from PySide6.QtWidgets import QFileDialog
-import os
 
 
 class Plugin2:
@@ -36,4 +37,3 @@ class Plugin2:
 
     def test_function(self):
         print("插件2测试操作被点击了!")
-

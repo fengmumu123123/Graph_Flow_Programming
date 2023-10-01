@@ -1,3 +1,6 @@
 {
-    "enabled_plugins": ["plugin1", "plugin2"]
+  "enabled_plugins": [
+    "plugin1",
+    "plugin2"
+  ]
 }
