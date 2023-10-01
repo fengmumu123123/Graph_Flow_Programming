@@ -9,14 +9,20 @@ class Plugin2:
         self.app = app
 
     def load(self):
-        # 加载插件2时，在插件1的文件菜单中添加一个选择文件夹的操作
-        print('插件2加载成功')
+        # 获取插件1创建的子菜单
         plugin1 = self.app.plugin_manager.mediator.get_plugin('plugin1')
+        # 检查Plugin1是否存在且已经创建了file_menu
         print(plugin1)
-        if plugin1 and plugin1.file_menu:
-            select_folder_action = QAction("选择文件夹", self.app)
-            select_folder_action.triggered.connect(self.select_folder)
-            plugin1.file_menu.addAction(select_folder_action)
+        if plugin1 and hasattr(plugin1, 'plugin_test_menu') and plugin1.plugin_test_menu:
+            # 创建一个新的"选择文件夹"操作
+            select_folder_action = QAction("插件中介测试", self.app)
+            select_folder_action.triggered.connect(self.test_function)
+
+            # 在Plugin1的插件测试菜单中添加新的操作
+            plugin1.plugin_test_menu.addAction(select_folder_action)
+            print('插件2加载成功')
+        else:
+            print('插件2加载失败，因为找不到插件1的子菜单')
 
     def select_folder(self):
         # 打开选择文件夹对话框并打印所选文件夹的内容
@@ -27,3 +33,7 @@ class Plugin2:
                 print(f"目录: {root}")
                 for file in files:
                     print(f"文件: {file}")
+
+    def test_function(self):
+        print("插件2测试操作被点击了!")
+
